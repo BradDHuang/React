@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "A chat example to showcase how to use `socket.io` with a static `express` server with `async` for control flow.",
   "main": "index.js",
-  "engines":{
+  "engines": {
     "node": "6.11.2",
     "npm": "3.10.10"
   },
@@ -11,10 +11,15 @@
   "dependencies": {
     "async": "~0.2.8",
     "express": "^3.2.6",
+    "mongoose": "^4.13.5",
+    "nodemon": "^1.12.1",
+    "passport": "^0.4.0",
+    "passport-google-oauth20": "^1.0.0",
     "socket.io": "~0.9.14"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "devDependencies": {},
   "license": "ISC"
