@@ -24,4 +24,16 @@ app.get(
   }
 );
 
+// 4th
+app.get('/api/logout', (req, res) => {
+    req.logout();
+    res.send(req.user);
+    // console.log('You are logged out');
+});
+
+// add the 3rd route handler
+app.get('/api/current_user', (req, res) => {
+    res.send(req.user);
+});
+
 };
