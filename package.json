@@ -1,15 +1,16 @@
 {
-  "name": "chat-example",
+  "name": "server",
   "version": "0.0.0",
-  "description": "A chat example to showcase how to use `socket.io` with a static `express` server with `async` for control flow.",
+  "description": "",
   "main": "index.js",
   "engines": {
     "node": "6.11.2",
     "npm": "3.10.10"
   },
-  "author": "Mostafa Eweda <mo.eweda@gmail.com>",
+  "author": "",
   "dependencies": {
     "async": "~0.2.8",
+    "concurrently": "^3.5.1",
     "cookie-session": "^2.0.0-beta.3",
     "express": "^3.2.6",
     "mongoose": "^4.13.5",
@@ -20,7 +21,9 @@
   },
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "server": "nodemon index.js",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "devDependencies": {},
   "license": "ISC"
