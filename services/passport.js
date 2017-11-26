@@ -24,6 +24,7 @@ passport.use(new GoogleStrategy(
     clientSecret: keys.googleClientSecret,
     callbackURL: "/auth/google/callback",
     proxy: true
+    // Browser -> Heroku Proxy -> Our Server @Heroku
     },
 //   }, (accessToken) => {
   function(accessToken, refreshToken, profile, done) {
