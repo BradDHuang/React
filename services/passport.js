@@ -28,15 +28,15 @@ passport.use(new GoogleStrategy(
     // Proxy act as the "Load Balancer"
     },
 //   }, (accessToken) => {
-  function(accessToken, refreshToken, profile, done) {
-    User.findOne({ googleId: profile.id }).then(existingUser => {
+  async (accessToken, refreshToken, profile, done) => {
+    const existingUser = await User.findOne({ googleId: profile.id })
+    // .then(existingUser => {
             if (existingUser) {
-                done(null, existingUser);
-            } else {
-                new User({ googleId: profile.id })
-                .save()
-                .then(user => done(null, user));
-            }
-        });
+                return done(null, existingUser);
+            } 
+            const user = await new User({ googleId: profile.id }).save()
+            // .then(user => done(null, user));
+            done(null, user);
+        // });
   }
 ));
