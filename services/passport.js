@@ -25,6 +25,7 @@ passport.use(new GoogleStrategy(
     callbackURL: "/auth/google/callback",
     proxy: true
     // Browser -> Heroku Proxy -> Our Server @Heroku
+    // Proxy act as the "Load Balancer"
     },
 //   }, (accessToken) => {
   function(accessToken, refreshToken, profile, done) {
