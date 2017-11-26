@@ -34,6 +34,9 @@ app.get('/api/logout', (req, res) => {
 // add the 3rd route handler
 app.get('/api/current_user', (req, res) => {
     res.send(req.user);
+    
+    // res.send(req.session);
+    // { "passport": { "user": "5a18f9b65efe240cb1bf8c95" } }
 });
 
 };
